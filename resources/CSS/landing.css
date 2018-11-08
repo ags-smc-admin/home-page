@@ -1,23 +1,7 @@
 
-@font-face{
-    font-family: robotoslab;
-    src: url(../fonts/roboto_slab_light.ttf);
-}
-@font-face{
-    font-family: rubik;
-    src: url(../fonts/rubik_regular.ttf)
-}
-@font-face{
-    font-family: rubik-light;
-    src: url(../fonts/rubik_light.ttf)
-}
-@font-face{
-    font-family: rubik-medium;
-    src: url(../fonts/rubik_medium.ttf)
-}
 
 .land-top{
-    width: 1024px;
+    width: 100%;
     height: 688px;
     background:
     linear-gradient(
@@ -38,6 +22,17 @@
     ),
     url(../images/landing.bottom.jpg) no-repeat center;
     background-size: cover;
+}
+
+.center-horizontal {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 554px;
+    height: 288px;
+    background-color: #ffffff;
+    box-shadow: @shadow-3dp;
 }
 
 .rectangle-2{
