@@ -1,0 +1,107 @@
+/// Colors
+@blue: #0c80fe;
+@page-background-color: #F5F7FA;
+
+/// Shadows
+@shadow-1dp: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+@shadow-2dp: 0 3px 6px 0 rgba(0,0,0,0.23), 0 3px 6px 0 rgba(0,0,0,0.16);
+@shadow-3dp: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.26);
+
+/// Constants
+@body-font-size: 18px;
+@button-corner-radius: 4px;
+
+/// Body Styling
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/// Fonts
+@font-face {
+  font-family: Rubik;
+  src: url("../fonts/rubik_regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("../fonts/rubik_medium.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("../fonts/rubik_light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/roboto_slab_light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  background-color: @page-background-color;
+}
+
+/// CSS class to be used for the rectangular buttons
+.rectangle-button {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 360px;
+  min-width: 256px;
+  max-height: 40px;
+  border-radius: @button-corner-radius;
+  box-shadow: @shadow-1dp;
+  padding: 0.5em;
+  border: none;
+  cursor: pointer;
+  background: white url("../images/icons/right.arrow.blue.svg") no-repeat right 0.5em center;
+  outline: none;
+
+  font-family: Rubik, sans-serif;
+  font-size: @body-font-size;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: normal;
+  color: @blue;
+
+  transition: transform 200ms, box-shadow 200ms,
+              color 200ms, background-color 200ms;
+
+
+  &:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+
+    color: white;
+    background: @blue url("../images/icons/right.arrow.white.svg") no-repeat right 0.5em center;
+
+    box-shadow: @shadow-2dp;
+  }
+
+  &:active {
+    -webkit-transform: scale(0.99);
+    -moz-transform: scale(0.99);
+    -ms-transform: scale(0.99);
+    -o-transform: scale(0.99);
+    transform: scale(0.99);
+
+    color: white;
+    background: @blue url("../images/icons/right.arrow.white.svg") no-repeat right 0.5em center;
+    box-shadow: @shadow-2dp;
+  }
+}

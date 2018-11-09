@@ -1,31 +1,93 @@
-@import 'shared.less';
-
-.land-top{
+body {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: Rubik;
+  src: url("../fonts/rubik_regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Rubik;
+  src: url("../fonts/rubik_medium.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Rubik;
+  src: url("../fonts/rubik_light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/roboto_slab_light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+body {
+  background-color: #F5F7FA;
+}
+.rectangle-button {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 360px;
+  min-width: 256px;
+  max-height: 40px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+  padding: 0.5em;
+  border: none;
+  cursor: pointer;
+  background: white url("../images/icons/right.arrow.blue.svg") no-repeat right 0.5em center;
+  outline: none;
+  font-family: Rubik, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: normal;
+  color: #0c80fe;
+  transition: transform 200ms, box-shadow 200ms, color 200ms, background-color 200ms;
+}
+.rectangle-button:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  color: white;
+  background: #0c80fe url("../images/icons/right.arrow.white.svg") no-repeat right 0.5em center;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23), 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+.rectangle-button:active {
+  -webkit-transform: scale(0.99);
+  -moz-transform: scale(0.99);
+  -ms-transform: scale(0.99);
+  -o-transform: scale(0.99);
+  transform: scale(0.99);
+  color: white;
+  background: #0c80fe url("../images/icons/right.arrow.white.svg") no-repeat right 0.5em center;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23), 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+.land-top {
   position: relative;
   width: 100%;
   height: 688px;
-  background:
-          linear-gradient(
-                  rgba(12, 128, 254, 0.65),
-                  rgba(201, 107, 255, 0.65)
-          ),
-          url(../images/landing.top.png) no-repeat center;
+  background: linear-gradient(rgba(12, 128, 254, 0.65), rgba(201, 107, 255, 0.65)), url(../images/landing.top.png) no-repeat center;
   background-size: cover;
 }
-
-.land-bot{
+.land-bot {
   position: relative;
   width: 100%;
   height: 432px;
-  background:
-          linear-gradient(
-                  rgba(12, 128, 254, 0.65),
-                  rgba(201, 107, 255, 0.65)
-          ),
-          url(../images/landing.bottom.jpg) no-repeat center;
+  background: linear-gradient(rgba(12, 128, 254, 0.65), rgba(201, 107, 255, 0.65)), url(../images/landing.bottom.jpg) no-repeat center;
   background-size: cover;
 }
-
 .center-horizontal {
   position: absolute;
   left: 50%;
@@ -33,30 +95,26 @@
   top: 200px;
   width: 554px;
   height: 288px;
-  box-shadow: @shadow-3dp;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.26);
   background-color: white;
 }
-
 #logo {
   font-family: "Roboto Slab", sans-serif;
 }
-
-.rectangle-2{
+.rectangle-2 {
   width: 544px;
   height: 288px;
   border-radius: 4px;
   box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26);
   background-color: #ffffff;
-  position:absolute;
+  position: absolute;
   color: #000000;
   top: 200px;
   left: 232px;
 }
-
-#main-header h1{
+#main-header h1 {
   width: 255px;
   height: 104px;
-  //font-family: robotoslab, serif;
   font-size: 120px;
   font-weight: 300;
   font-style: normal;
@@ -72,8 +130,7 @@
   top: -15px;
   left: 25px;
 }
-
-#main-header h2{
+#main-header h2 {
   width: 495px;
   height: 48px;
   font-family: rubik;
@@ -91,11 +148,8 @@
   position: absolute;
   top: 140px;
   right: 26px;
-
-
 }
-
-#main-header h3{
+#main-header h3 {
   width: 342px;
   height: 24px;
   font-family: rubik-light;
@@ -108,19 +162,15 @@
   text-align: right;
   color: #2d2f33;
   position: absolute;
-
 }
-
-#sci{
+#sci {
   top: 179px;
   right: 26px;
 }
-
-#hss{
-  top:219px;
+#hss {
+  top: 219px;
   right: 26px;
 }
-
 .rectangle {
   width: 256px;
   height: 40px;
@@ -129,7 +179,6 @@
   /*background-color: #ffffff; */
   position: relative;
 }
-
 .square {
   width: 136px;
   height: 104px;
@@ -138,9 +187,9 @@
   /*background-color: #ffffff; */
   position: relative;
 }
-
 .link-name {
-  width: 256px; /*changed*/
+  width: 256px;
+  /*changed*/
   height: 40px;
   font-family: rubik;
   font-size: 16px;
@@ -169,7 +218,6 @@
   background-color: #ffffff;
   /* position: relative; */
 }
-
 /*
 .rectangle:hover{
     width: 256px;
@@ -181,7 +229,7 @@
     position: relative;
 }
 */
-.rectangle:active{
+.rectangle:active {
   width: 256px;
   height: 40px;
   border-radius: 4px;
@@ -189,7 +237,6 @@
   color: #ffffff;
   background-color: #0c80fe;
   position: relative;
-
 }
 /*
 .square:hover{
@@ -203,8 +250,7 @@
 
 }
 */
-
-.square:active{
+.square:active {
   width: 136px;
   height: 104px;
   border-radius: 4px;
@@ -212,136 +258,115 @@
   color: #ffffff;
   background-color: #0c80fe;
   position: relative;
-
 }
-
-.text{
+.text {
   position: absolute;
   left: 10px;
   top: 10px;
 }
-
-.text-2{
+.text-2 {
   position: absolute;
   left: 10px;
   top: 73px;
 }
-
-.text-3{
+.text-3 {
   position: absolute;
   left: 37px;
   top: 73px;
 }
-
-.text-4{
+.text-4 {
   position: absolute;
   left: 26px;
   top: 73px;
 }
-
-.rec{
+.rec {
   position: relative;
   left: 225px;
   top: 10px;
 }
-
-.squ{
+.squ {
   position: relative;
   top: 72px;
   right: 8px;
 }
-
-.boa{
+.boa {
   position: relative;
   font-size: 60px;
   top: 10px;
   left: 32px;
 }
-
-.adv{
+.adv {
   position: absolute;
   font-size: 55px;
   top: 11px;
   left: 44px;
 }
-
-.adv-2{
+.adv-2 {
   position: absolute;
   font-size: 33px;
   top: 21px;
   left: 25px;
 }
-
-.adv-3{
+.adv-3 {
   position: absolute;
   font-size: 33px;
   top: 21px;
   right: 25px;
 }
-
-.nee{
+.nee {
   position: absolute;
   font-size: 57px;
   top: 13px;
   left: 40px;
 }
-
-.main-box{
+.main-box {
   width: 1024px;
   height: 392px;
   position: relative;
 }
-
-.box-1{
+.box-1 {
   position: absolute;
   top: 64px;
   left: 96px;
 }
-
-.box-2{
+.box-2 {
   position: absolute;
   top: 64px;
   left: 384px;
 }
-
-.box-3{
+.box-3 {
   position: absolute;
   top: 64px;
   left: 672px;
 }
-
-.box-4{
+.box-4 {
   position: absolute;
   top: 136px;
   left: 96px;
 }
-
-.box-5{
+.box-5 {
   position: absolute;
   top: 136px;
   left: 384px;
 }
-
-.box-6{
+.box-6 {
   position: absolute;
   top: 136px;
   left: 672px;
 }
-
-.box-7{
+.box-7 {
   position: absolute;
   top: 224px;
   left: 296px;
 }
-
-.box-8{
+.box-8 {
   position: absolute;
   top: 224px;
   left: 448px;
 }
-
-.box-9{
+.box-9 {
   position: absolute;
   top: 224px;
   left: 600px;
 }
+/*# sourceMappingURL=landing.css.map */
