@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 @font-face {
   font-family: Rubik;
@@ -29,12 +33,18 @@ body {
 body {
   background-color: #F5F7FA;
 }
+.center-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .rectangle-button {
   display: inline-block;
   vertical-align: middle;
   max-width: 360px;
   min-width: 256px;
   max-height: 40px;
+  margin: 1em;
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
   padding: 0.5em;
@@ -62,7 +72,7 @@ body {
   transform: scale(1.05);
   color: white;
   background: #0c80fe url("../images/icons/right.arrow.white.svg") no-repeat right 0.5em center;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23), 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.26);
 }
 .rectangle-button:active {
   -webkit-transform: scale(0.99);
@@ -73,5 +83,72 @@ body {
   color: white;
   background: #0c80fe url("../images/icons/right.arrow.white.svg") no-repeat right 0.5em center;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23), 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+.square-icon-button {
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  width: 136px;
+  height: 104px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 2em;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+  padding: 0.5em;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-family: Rubik, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: normal;
+  color: #0c80fe;
+  background-color: white;
+  transition: transform 200ms, box-shadow 200ms, color 200ms, background-color 200ms;
+}
+.square-icon-button img {
+  display: block;
+  margin: 1em auto 0.5em;
+}
+.square-icon-button span {
+  position: absolute;
+  height: 1.5em;
+  bottom: 0.5em;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.square-icon-button:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+  color: white;
+  background-color: #0c80fe;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.26);
+}
+.square-icon-button:active {
+  -webkit-transform: scale(0.99);
+  -moz-transform: scale(0.99);
+  -ms-transform: scale(0.99);
+  -o-transform: scale(0.99);
+  transform: scale(0.99);
+  color: white;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.23), 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 /*# sourceMappingURL=shared.css.map */

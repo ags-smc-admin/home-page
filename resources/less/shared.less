@@ -1,20 +1,26 @@
 /// Colors
 @blue: #0c80fe;
 @page-background-color: #F5F7FA;
+@font-color: #2D2F33;
 
 /// Shadows
 @shadow-1dp: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
-@shadow-2dp: 0 3px 6px 0 rgba(0,0,0,0.23), 0 3px 6px 0 rgba(0,0,0,0.16);
+@shadow-2dp: 0 3px 6px 0 rgba(0, 0, 0, 0.23), 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 @shadow-3dp: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.26);
+@shadow-4dp: 0 10px 10px 0 rgba(0,0,0,0.26), 0 14px 28px 0 rgba(0,0,0,0.25);
 
 /// Constants
 @body-font-size: 18px;
-@button-corner-radius: 4px;
+@corner-radius: 4px;
 
+* {
+  box-sizing: border-box;
+}
 /// Body Styling
 body {
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 /// Fonts
@@ -50,6 +56,12 @@ body {
   background-color: @page-background-color;
 }
 
+.center-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /// CSS class to be used for the rectangular buttons
 .rectangle-button {
   display: inline-block;
@@ -57,7 +69,8 @@ body {
   max-width: 360px;
   min-width: 256px;
   max-height: 40px;
-  border-radius: @button-corner-radius;
+  margin: 1em;
+  border-radius: @corner-radius;
   box-shadow: @shadow-1dp;
   padding: 0.5em;
   border: none;
@@ -77,8 +90,7 @@ body {
   color: @blue;
 
   transition: transform 200ms, box-shadow 200ms,
-              color 200ms, background-color 200ms;
-
+  color 200ms, background-color 200ms;
 
   &:hover {
     -webkit-transform: scale(1.05);
@@ -90,7 +102,7 @@ body {
     color: white;
     background: @blue url("../images/icons/right.arrow.white.svg") no-repeat right 0.5em center;
 
-    box-shadow: @shadow-2dp;
+    box-shadow: @shadow-3dp;
   }
 
   &:active {
@@ -104,4 +116,86 @@ body {
     background: @blue url("../images/icons/right.arrow.white.svg") no-repeat right 0.5em center;
     box-shadow: @shadow-2dp;
   }
+}
+
+/// CSS class to be used for the semi-square buttons with icons
+.square-icon-button {
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  width: 136px;
+  height: 104px;
+
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 2em;
+  border-radius: @corner-radius;
+  box-shadow: @shadow-1dp;
+  padding: 0.5em;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  font-family: Rubik, sans-serif;
+  font-size: @body-font-size;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: normal;
+  color: @blue;
+
+  background-color: white;
+
+  transition: transform 200ms, box-shadow 200ms,
+  color 200ms, background-color 200ms;
+
+  img {
+    display: block;
+    margin: 1em auto 0.5em;
+  }
+
+  span {
+    position: absolute;
+    height: 1.5em;
+    bottom: 0.5em;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+
+    color: white;
+    background-color: @blue;
+
+    box-shadow: @shadow-3dp;
+  }
+
+  &:active {
+    -webkit-transform: scale(0.99);
+    -moz-transform: scale(0.99);
+    -ms-transform: scale(0.99);
+    -o-transform: scale(0.99);
+    transform: scale(0.99);
+
+    color: white;
+    box-shadow: @shadow-2dp;
+  }
+}
+
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
